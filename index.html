@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دعوة حفل زفاف | أروى ومصعب</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+:root{
+--burgundy:#540D1D;
+--burgundy-dark:#35030E;
+--burgundy-light:#6A1228;
+--gold:#D3AA5B;
+--gold-light:#E8CA83;
+--cream:#FFF7EB;
+--text:#5A2633;
+--muted:#806570;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--text);font-family:"Cairo",sans-serif}
+.cover{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:25px;background:radial-gradient(circle at 50% 38%,var(--burgundy-light),var(--burgundy) 52%,var(--burgundy-dark));transition:.9s}
+.cover.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.invitation-card{position:relative;width:min(430px,92vw);min-height:650px;padding:45px 30px 50px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;background:linear-gradient(150deg,#67152B,var(--burgundy));color:#fff7eb;border:1px solid var(--gold);box-shadow:0 0 0 7px rgba(53,3,14,.82),0 0 0 9px var(--gold),0 25px 70px rgba(48,9,25,.38);overflow:hidden}
+.invitation-card:before{content:"";position:absolute;inset:14px;border:1px solid rgba(232,202,131,.68);pointer-events:none}
+.corner{position:absolute;width:58px;height:58px;border-color:var(--gold-light);border-style:solid;opacity:.9}
+.top-right{top:22px;right:22px;border-width:2px 2px 0 0}.top-left{top:22px;left:22px;border-width:2px 0 0 2px}.bottom-right{bottom:22px;right:22px;border-width:0 2px 2px 0}.bottom-left{bottom:22px;left:22px;border-width:0 0 2px 2px}
+.card-content{position:relative;z-index:2;width:100%;text-align:center}.card-icon{width:65px;height:65px;display:flex;align-items:center;justify-content:center;margin:auto;color:var(--gold-light);font-size:30px;border-bottom:1px solid var(--gold)}
+.card-small{font-size:14px;font-weight:600;color:var(--gold-light);margin-top:20px}.family{font-family:"Aref Ruqaa",serif;font-size:clamp(34px,8vw,46px);color:#fff3dd;margin-top:5px}.card-description{margin-top:22px;font-size:13px;line-height:2;color:#f3dfcf}
+.couple-names{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;margin-top:14px}.couple-name{font-family:"Aref Ruqaa",serif;font-size:clamp(60px,16vw,82px);line-height:1;color:#fff6e7;text-shadow:1px 1px 0 rgba(232,202,131,.55)}
+.between{display:flex;align-items:center;gap:12px;margin:13px 0}.between-line{width:45px;height:1px;background:var(--gold)}.between i{color:var(--gold-light);font-size:13px}
+.open-button{position:relative;z-index:2;margin-top:38px;padding:13px 30px;border:1px solid var(--gold);background:var(--gold);color:var(--burgundy-dark);font-family:"Cairo",sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:.3s}
+.open-button:hover{background:var(--gold-light);transform:translateY(-3px)}
+.invitation{display:none;background:var(--cream);min-height:100vh}.invitation.show{display:block;animation:reveal 1s ease}
+@keyframes reveal{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+.container{width:min(900px,92%);margin:auto}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 20px;background:radial-gradient(circle at top,#F5E5E8,var(--cream) 58%);overflow:hidden}
+.hero-icon{color:var(--burgundy);font-size:32px;margin-bottom:20px}.hero-small{color:var(--burgundy-light);font-size:15px;font-weight:600}.hero-family{font-family:"Aref Ruqaa",serif;font-size:clamp(38px,9vw,58px);color:var(--burgundy);margin-top:5px}.hero-description{margin-top:20px;font-size:14px;line-height:2;color:var(--muted)}
+.hero-names{display:flex;align-items:center;gap:25px;margin-top:35px}.hero-name{font-family:"Aref Ruqaa",serif;font-size:clamp(60px,14vw,90px);color:var(--burgundy);line-height:1}.hero-heart{color:var(--gold);font-size:19px}.hero-line{width:160px;height:1px;margin-top:35px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
+.section{padding:75px 0}.section-title{text-align:center;font-size:21px;font-weight:600;color:var(--burgundy);margin-bottom:35px}.section-title i{color:var(--gold);margin-left:8px}
+.parents,.details{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.parent-card{position:relative;padding:38px 20px;text-align:center;background:#fff;border:1px solid rgba(211,170,91,.55);box-shadow:0 10px 30px rgba(80,25,45,.07);overflow:hidden}.parent-card:before{content:"";position:absolute;top:0;right:0;width:100%;height:4px;background:var(--burgundy)}.parent-icon{color:var(--gold);font-size:22px;margin-bottom:13px}.parent-label{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px}.parent-name{font-family:"Aref Ruqaa",serif;font-size:clamp(28px,5vw,38px);color:var(--burgundy)}
+.detail-card{padding:32px 20px;text-align:center;background:#fff;border:1px solid rgba(211,170,91,.6);box-shadow:0 10px 30px rgba(80,25,45,.06)}.detail-icon{color:var(--burgundy);font-size:25px;margin-bottom:15px}.detail-title{font-size:13px;font-weight:600;color:#967c67;margin-bottom:9px}.detail-text{font-size:15px;font-weight:600;line-height:1.9;color:var(--text)}.date{font-family:"Aref Ruqaa",serif;font-size:38px;color:var(--burgundy)}
+.welcome{padding:90px 20px;text-align:center;background:linear-gradient(135deg,var(--burgundy),var(--burgundy-light));color:white}.welcome-icon{color:var(--gold-light);font-size:27px;margin-bottom:20px}.welcome-text{font-family:"Aref Ruqaa",serif;font-size:clamp(28px,6vw,43px);line-height:1.8;color:#fff3df}
+.notes{display:flex;flex-direction:column;gap:15px}.note{display:flex;align-items:center;gap:15px;padding:19px 20px;background:#fff;border-right:4px solid var(--burgundy);box-shadow:0 7px 22px rgba(80,25,45,.06)}.note>i{min-width:30px;color:var(--gold);font-size:18px;text-align:center}.no-photo-icon{position:relative;min-width:30px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:18px}.no-photo-icon b{position:absolute;width:28px;height:2px;background:var(--burgundy);transform:rotate(-45deg);border-radius:2px}.note span:last-child{font-size:13px;color:var(--text);line-height:1.8}
+.countdown-section{padding:85px 20px 70px;text-align:center;color:#fff;background:radial-gradient(circle at center,var(--burgundy-light),var(--burgundy) 58%,#460714)}
+.countdown-title{font-size:25px;font-weight:600;color:var(--gold-light);margin-bottom:45px}.countdown{display:flex;justify-content:center;align-items:center;gap:28px;flex-wrap:wrap}.counter{width:125px;height:125px;border:1.5px solid var(--gold);border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center}.counter strong{font-size:30px;color:var(--gold-light)}.counter span{margin-top:4px;font-size:13px;color:#f9e9df}.countdown-message{margin-top:55px;font-size:clamp(20px,4vw,30px);font-weight:500;color:#fff4e9}
+footer{padding:85px 20px 60px;text-align:center;background:var(--burgundy-dark);color:white}.footer-ring{width:75px;height:75px;margin:0 auto 35px;display:flex;align-items:center;justify-content:center;color:var(--gold-light);font-size:46px}.footer-names{font-family:"Aref Ruqaa",serif;font-size:clamp(42px,8vw,58px);color:var(--gold-light);margin-bottom:20px}.footer-names i{font-size:18px;margin:0 8px}.footer-blessing{font-family:"Amiri",serif;font-size:clamp(20px,4vw,28px);color:#fff8ef;line-height:1.9}.footer-line{width:250px;max-width:70%;height:1px;margin:34px auto;background:var(--gold)}.footer-waiting{font-family:"Amiri",serif;font-size:clamp(20px,4vw,27px);color:#fff7ed}.footer-waiting i{color:#fff7ed;font-size:20px;margin-left:8px}
+@media(max-width:650px){.invitation-card{min-height:610px;padding:40px 24px 48px}.parents,.details{grid-template-columns:1fr}.hero-names{gap:12px}.hero-name{font-size:clamp(52px,16vw,72px)}.parent-name{font-size:30px}.section{padding:60px 0}.countdown{gap:12px}.counter{width:78px;height:78px}.counter strong{font-size:22px}.counter span{font-size:10px}.countdown-title{font-size:21px}.countdown-message{margin-top:40px}}
+@media(max-width:390px){.counter{width:70px;height:70px}.counter strong{font-size:19px}.counter span{font-size:9px}}
+</style>
+</head>
+
+<body>
+
+<section class="cover" id="cover">
+<div class="invitation-card">
+<span class="corner top-right"></span><span class="corner top-left"></span>
+<span class="corner bottom-right"></span><span class="corner bottom-left"></span>
+
+<div class="card-content">
+<div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+<p class="card-small">أفراح</p>
+<h1 class="family">آل السحَّار</h1>
+<p class="card-description">يتشرفان بدعوتكم لحضور<br>حفل زفاف</p>
+</div>
+
+<div class="couple-names">
+<div class="couple-name">أروى</div>
+<div class="between"><span class="between-line"></span><i class="fa-solid fa-heart"></i><span class="between-line"></span></div>
+<div class="couple-name">مصعب</div>
+</div>
+
+<button class="open-button" onclick="openInvitation()">
+<i class="fa-solid fa-envelope-open-text"></i>
+اضغط لفتح الدعوة
+</button>
+</div>
+</section>
+
+<main class="invitation" id="invitation">
+
+<section class="hero">
+<div class="hero-icon"><i class="fa-solid fa-crown"></i></div>
+<p class="hero-small">أفراح</p>
+<h1 class="hero-family">آل السحَّار</h1>
+<p class="hero-description">يتشرفان بدعوتكم لحضور<br>حفل زفاف</p>
+<div class="hero-names"><span class="hero-name">أروى</span><i class="fa-solid fa-heart hero-heart"></i><span class="hero-name">مصعب</span></div>
+<div class="hero-line"></div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title"><i class="fa-solid fa-users"></i>بحضور ومباركة الأهل</h2>
+<div class="parents">
+<div class="parent-card"><div class="parent-icon"><i class="fa-solid fa-user-tie"></i></div><p class="parent-label">والد العريس</p><div class="parent-name">جودت محمود السحَّار</div></div>
+<div class="parent-card"><div class="parent-icon"><i class="fa-solid fa-user"></i></div><p class="parent-label">والد العروس</p><div class="parent-name">هاني يوسف أبو زايده</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title"><i class="fa-solid fa-scroll"></i>تفاصيل الحفل</h2>
+<div class="details">
+<div class="detail-card"><div class="detail-icon"><i class="fa-solid fa-calendar-days"></i></div><div class="detail-title">اليوم والتاريخ</div><div class="detail-text">يوم الخميس<br><span class="date">١٠/١</span></div></div>
+<div class="detail-card"><div class="detail-icon"><i class="fa-regular fa-clock"></i></div><div class="detail-title">الموعد</div><div class="detail-text">الساعة الرابعة والنصف مساءً</div></div>
+<div class="detail-card"><div class="detail-icon"><i class="fa-solid fa-building-columns"></i></div><div class="detail-title">المكان</div><div class="detail-text">صالة زهرة الاوركيد</div></div>
+<div class="detail-card"><div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div><div class="detail-title">العنوان</div><div class="detail-text">غزة - شارع النصر<br>شرق برج الشفاء بجوار مول بيتلو</div></div>
+</div>
+</div>
+</section>
+
+<section class="welcome">
+<div class="welcome-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+<p class="welcome-text">نتشرف بحضوركم<br>ومشاركتكم فرحتنا</p>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title"><i class="fa-solid fa-circle-info"></i>ملاحظات</h2>
+<div class="notes">
+<div class="note"><span class="no-photo-icon"><i class="fa-solid fa-camera"></i><b></b></span><span>ممنوع التصوير بالجوال</span></div>
+<div class="note"><i class="fa-solid fa-door-open"></i><span>الرجاء التوجه للصالة مباشرةً</span></div>
+<div class="note"><i class="fa-solid fa-moon"></i><span>نوماً هنيئاً لأطفالكم</span></div>
+</div>
+</div>
+</section>
+
+<section class="countdown-section">
+<h2 class="countdown-title">العد التنازلي للموعد</h2>
+<div class="countdown">
+<div class="counter"><strong id="days">00</strong><span>أيام</span></div>
+<div class="counter"><strong id="hours">00</strong><span>ساعات</span></div>
+<div class="counter"><strong id="minutes">00</strong><span>دقائق</span></div>
+<div class="counter"><strong id="seconds">00</strong><span>ثواني</span></div>
+</div>
+<p class="countdown-message">أهلاً وسهلاً بكم في أجمل أيامنا</p>
+</section>
+
+<footer>
+<div class="footer-ring"><i class="fa-solid fa-ring"></i></div>
+<div class="footer-names">أروى <i class="fa-solid fa-heart"></i> مصعب</div>
+<p class="footer-blessing">بارك الله لكما وبارك عليكما وجمع بينكما في خير</p>
+<div class="footer-line"></div>
+<p class="footer-waiting"><i class="fa-solid fa-heart"></i> بكل الحب ننتظركم</p>
+</footer>
+
+</main>
+
+<script>
+function openInvitation(){
+const cover=document.getElementById("cover");
+const invitation=document.getElementById("invitation");
+cover.classList.add("hidden");
+setTimeout(()=>{invitation.classList.add("show");window.scrollTo({top:0,behavior:"smooth"});},500);
+}
+
+const weddingDate=new Date("2026-10-01T16:30:00").getTime();
+
+function updateCountdown(){
+const distance=weddingDate-new Date().getTime();
+if(distance<=0){
+["days","hours","minutes","seconds"].forEach(id=>document.getElementById(id).textContent="00");
+return;
+}
+const days=Math.floor(distance/(1000*60*60*24));
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds=Math.floor((distance%(1000*60))/1000);
+document.getElementById("days").textContent=String(days).padStart(2,"0");
+document.getElementById("hours").textContent=String(hours).padStart(2,"0");
+document.getElementById("minutes").textContent=String(minutes).padStart(2,"0");
+document.getElementById("seconds").textContent=String(seconds).padStart(2,"0");
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+</script>
+
+</body>
+</html>
